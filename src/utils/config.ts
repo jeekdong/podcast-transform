@@ -1,7 +1,5 @@
 import * as dotenv from 'dotenv'
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({
-    path: '.local.env',
-  })
-}
+dotenv.config({
+  path: '.local.env',
+})
