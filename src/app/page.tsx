@@ -42,6 +42,15 @@ export default function Home({}) {
           >
             浏览
           </Button>
+          <Button
+            size="lg"
+            variant="primary"
+            onClick={() => {
+              router.push('/summary-prompt')
+            }}
+          >
+            ChatGpt文章阅读
+          </Button>
         </HStack>
       </Container>
     </div>
