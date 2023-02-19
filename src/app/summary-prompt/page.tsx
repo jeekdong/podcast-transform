@@ -19,11 +19,14 @@ import { SunIcon } from '@chakra-ui/icons'
 
 const MAX_SINGLE_TEXT_LENGTH = 1400
 
-const START_TEXT = '（文章段落没有发送完，请只回复"好的"）\n'
-const END_TEXT = '（文章发送完了，包括之前发送的所有内容概述这篇文章的内容）\n'
+const START_TEXT = '（阅读内容然后回复好的）\n'
+const END_TEXT = '（综合以上发布的所有内容，概述文章500字）\n'
+
+// const PRE_TEXT =
+//   '下面是一篇很长的文章，接下来我会分多次发送给你内容，等我发完之后会问你一些问题，注意后面每段文字开始括号里的内容，按照括号里的指示回复'
 
 const PRE_TEXT =
-  '下面是一篇很长的文章，接下来我会分多次发送给你内容，等我发完之后会问你一些问题，注意后面每段文字开始括号里的内容，按照括号里的指示回复'
+  '我希望你充当一个文章阅读者，接下来我会分多次发送给你文章内容，它们组合在一起是完整的文章内容，当我需要问你问题的时候，我会将问题放在大括号里{像这样}，除非我指示你这样做，否则不要回复任何其他内容(只需要回复好的)'
 
 function Page() {
   const toast = useToast()
@@ -69,7 +72,7 @@ function Page() {
   return (
     <>
       <Box mt="10" textAlign="center">
-        <Heading>ChatGpt 文章输入生成器</Heading>
+        <Heading>chatGPT 文章输入生成器</Heading>
         <Textarea
           w="60%"
           h="48"
