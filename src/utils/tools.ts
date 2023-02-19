@@ -13,8 +13,12 @@ export async function getAudioUrl(url: string) {
       audioUrl,
       title,
     }
+  } else {
+    return {
+      audioUrl: url,
+      title: '',
+    }
   }
-  throw new Error('输入的链接不符合要求')
 }
 
 export async function readFile(file: File) {

@@ -14,10 +14,15 @@ export default async function handler(
 ) {
   try {
     const url = req.query.url
+    // const type = req.query.type
     if (!url) {
       res.status(400).json({ error: '缺少参数 url' })
       return
     }
+    // if (!type) {
+    //   res.status(400).json({ error: '缺少参数 type' })
+    //   return
+    // }
     const { audioUrl } = await getAudioUrl(url as string)
     const response = await fetch(AUDIO_SUBMIT_URL, {
       method: 'POST',

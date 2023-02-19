@@ -13,6 +13,7 @@ import {
   ScaleFade,
   useToast,
   HStack,
+  Select,
 } from '@chakra-ui/react'
 
 import { LinkIcon, SunIcon } from '@chakra-ui/icons'
@@ -21,14 +22,18 @@ import { PodCastIcon } from '../../components/icons'
 export default function Page({}) {
   const [linkUrl, setLinkUrl] = useState('')
   const [isCreating, setIsCreating] = useState(false)
+  const [type, setType] = useState('xyzLink')
   const toast = useToast()
   const router = useRouter()
 
   const handleCreate = async () => {
     setIsCreating(true)
-    const response = await fetch(`/api/audio-text/submit?url=${linkUrl}`, {
-      method: 'get',
-    })
+    const response = await fetch(
+      `/api/audio-text/submit?url=${linkUrl}&type=${type}`,
+      {
+        method: 'get',
+      }
+    )
     const res = await response.json()
     if (res.resp.code === 1000) {
       toast({
@@ -73,6 +78,14 @@ export default function Page({}) {
           </HStack>
           <InputGroup mt="6">
             <InputLeftElement pointerEvents="none" h="100%">
+              {/* <Select
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                placeholder="类型"
+              >
+                <option value="normalLink">音频链接</option>
+                <option value="xyzLink">小宇宙链接</option>
+              </Select> */}
               <LinkIcon boxSize="4" color="whatsapp.500" />
             </InputLeftElement>
             <Input

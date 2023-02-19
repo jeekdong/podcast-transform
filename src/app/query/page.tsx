@@ -288,7 +288,7 @@ function Page() {
               <FormLabel>播客地址</FormLabel>
               <Input
                 ref={initialRef}
-                placeholder="请输入小宇宙播客地址"
+                placeholder="请输入小宇宙播客/音频链接地址"
                 value={editPodcastUrl}
                 onChange={(e) => {
                   setEditPodcastUrl(e.target.value)
