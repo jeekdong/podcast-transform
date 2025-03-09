@@ -13,7 +13,6 @@ export default async function handler(
       res.status(400).json({ error: '缺少参数 id' })
       return
     }
-    console.log(process.env.VOLC_TOKEN)
     const response = await fetch(AUDIO_STATUS_URL, {
       method: 'POST',
       headers: {
