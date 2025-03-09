@@ -8,7 +8,7 @@ export async function getAudioUrl(url: string) {
       /<meta property="og:audio" content="(.+?)"/
     )?.[1]
     const title = html.match(/<meta property="og:title" content="(.+?)"/)?.[1]
-    console.log('audioUrl', audioUrl, title)
+    console.log('audioUrl', html, audioUrl, title)
     return {
       audioUrl,
       title,
